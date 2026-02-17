@@ -1,8 +1,4 @@
-# RCRC Seed Management API
-
-**RCRC Seed Management API** is the backend service of the **RCRC Seed Management System**, developed for **Naphok**, a division under the **Ministry of Forest and Environment, Lao PDR**.
-
-This project is built using **Spring Boot (Java)** with a **PostgreSQL** database. It provides a set of RESTful APIs that support frontend applications such as the **RCRC Seed Manager** mobile app and the **RCRC Seed Admin** web application.
+# FieldSync Inventory Backend
 
 ---
 
