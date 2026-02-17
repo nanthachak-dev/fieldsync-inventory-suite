@@ -1,1 +1,48 @@
-/ieldsync-inventory-db/.env
+# General
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+out/
+build/
+target/
+bin/
+.gradle/
+.kotlin/
+.baseDir
+.DS_Store
+Thumbs.db
+HELP.md
+
+# Maven (Backend)
+.mvn/
+mvnw
+mvnw.cmd
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# Gradle (App)
+**/build/
+.gradle/
+**/gradle-app.setting
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# Android (App)
+**/local.properties
+**/captures
+**/output.json
+*.keystore
+!debug.keystore
+**/google-services.json
+
+# Environment / Security
+.env
+.env.*
+!.env.example
+*.log
+*.sqlite
+
+# Database
+**/docker-compose.override.yml

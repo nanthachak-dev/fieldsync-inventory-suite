@@ -1,0 +1,16 @@
+package com.example.fieldsync_inventory_backend.dto.stock.movement_type;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class StockMovementTypeRequestDTO {
+    private String name;
+    private String effectOnStock;
+    private String description;
+}
