@@ -41,7 +41,7 @@ This project is built using **Spring Boot (Java)** with a **PostgreSQL** databas
 
    ```bash
    git clone [https://github.com/nanthachak-dev/fieldsync-inventory-suite.git]
-   cd fielsync-inventory-suite
+   cd fieldsync-inventory-suite
 
 2. Create Postgres Password in Docker Compose Folder
    ```bash
