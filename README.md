@@ -14,7 +14,6 @@ It is engineered to support high-reliability data synchronization, secure API co
 * **Offline-First Architecture**: Ensures field data is captured locally and synchronized automatically when a connection is restored.
 * **Secure API Gateway**: Provides a robust interoperability layer for seamless communication between mobile clients and the central database.
 * **Real-Time Monitoring**: Enables administrative oversight of inventory levels and resource distribution across multiple geographic nodes.
-* **Production-Ready Deployment**: Pre-configured with Docker and Nginx (SSL) for secure and scalable hosting.
 
 ---
 
@@ -22,4 +21,4 @@ It is engineered to support high-reliability data synchronization, secure API co
 * **Backend**: Spring Boot (Java) + RESTful API
 * **Mobile**: Kotlin (Jetpack Compose)
 * **Database**: PostgreSQL
-* **Infrastructure**: Docker, Nginx, SSL/TLS Encryption
+* **Infrastructure**: Docker
