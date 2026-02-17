@@ -95,27 +95,27 @@ fun InventoryScreen(
                     }
                 }
 
-                item {
-                    // Sale data button
-                    ReportButton(
-                        itemModifier,
-                        mainText = "Sale Data",
-                        onClick = {
-                            // Navigate to SaleScreen
-                        }
-                    )
-                }
-
-                item {
-                    // Preorder data button
-                    ReportButton(
-                        itemModifier,
-                        mainText = "Preorder Data",
-                        onClick = {
-                            // Navigate to PreorderScreen
-                        }
-                    )
-                }
+//                item {
+//                    // Sale data button
+//                    ReportButton(
+//                        itemModifier,
+//                        mainText = "Sale Data",
+//                        onClick = {
+//                            // Navigate to SaleScreen
+//                        }
+//                    )
+//                }
+//
+//                item {
+//                    // Preorder data button
+//                    ReportButton(
+//                        itemModifier,
+//                        mainText = "Preorder Data",
+//                        onClick = {
+//                            // Navigate to PreorderScreen
+//                        }
+//                    )
+//                }
             }
 
             PullRefreshIndicator(

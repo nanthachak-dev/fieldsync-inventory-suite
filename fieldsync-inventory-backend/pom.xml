@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>mofe.gov</groupId>
-    <artifactId>rcrc-seed-management-api</artifactId>
+    <artifactId>fieldsync-inventory-database</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>rcrc-seed-management-api</name>
     <description>API for RCRC Seed Management System</description>

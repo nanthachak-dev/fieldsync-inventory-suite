@@ -76,7 +76,7 @@ fun LoginScreen(
 
         // App name
         Text(
-            text = "RCRC Seed Manager",
+            text = "FieldSync Inventory",
             color = Color(0xFFB7B03A),
             fontSize = 28.sp,
             fontWeight = FontWeight.Light,

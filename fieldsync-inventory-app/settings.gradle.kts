@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "RCRC Seed Manager"
+rootProject.name = "FieldSync Inventory"
 include(":app")

@@ -91,7 +91,7 @@ public interface StockMovementDetailsRepository extends Repository<StockMovement
     BigDecimal getTotalStockBeforeDate(Instant lastDate);
 
     @Query(value = """
-                SELECT new mofe.gov.rcrc_seed_management_api.dto.stock.movement_details.RiceVarietyStockResponseDTO(
+                SELECT new com.example.fieldsync_inventory_backend.dto.stock.movement_details.RiceVarietyStockResponseDTO(
                     t.riceVarietyId, t.riceVarietyName, t.riceVarietyImageUrl,
                     SUM(CASE\s
                         WHEN t.movementTypeEffectOnStock = 'IN' THEN t.stockMovementQuantity\s
@@ -115,7 +115,7 @@ public interface StockMovementDetailsRepository extends Repository<StockMovement
     Page<RiceVarietyStockResponseDTO> findRiceVarietyStockBeforeDate(Instant lastDate, Pageable pageable);
 
     @Query(value = """
-                SELECT new mofe.gov.rcrc_seed_management_api.dto.stock.movement_details.RiceVarietySaleResponseDTO(
+                SELECT new com.example.fieldsync_inventory_backend.dto.stock.movement_details.RiceVarietySaleResponseDTO(
                     t.riceVarietyId, t.riceVarietyName, t.riceVarietyImageUrl,
                     SUM(t.stockMovementQuantity))
                 FROM\s
@@ -133,7 +133,7 @@ public interface StockMovementDetailsRepository extends Repository<StockMovement
             Instant startDate, Instant endDate, Pageable pageable);
 
     @Query(value = """
-                SELECT new mofe.gov.rcrc_seed_management_api.dto.inventory.InventoryVarietyResponseDTO(
+                SELECT new com.example.fieldsync_inventory_backend.dto.inventory.InventoryVarietyResponseDTO(
                     t.riceVarietyId, t.riceVarietyName,
                     SUM(CASE WHEN t.movementTypeEffectOnStock = 'IN' THEN t.stockMovementQuantity WHEN t.movementTypeEffectOnStock = 'OUT' THEN -t.stockMovementQuantity ELSE 0 END),
                     SUM(CASE WHEN t.seedBatchGrading = true AND t.movementTypeEffectOnStock = 'IN' THEN t.stockMovementQuantity WHEN t.seedBatchGrading = true AND t.movementTypeEffectOnStock = 'OUT' THEN -t.stockMovementQuantity ELSE 0 END),
@@ -153,7 +153,7 @@ public interface StockMovementDetailsRepository extends Repository<StockMovement
             Instant lastDate, Pageable pageable);
 
     @Query(value = """
-                SELECT new mofe.gov.rcrc_seed_management_api.dto.inventory.InventorySummaryDTO(
+                SELECT new com.example.fieldsync_inventory_backend.dto.inventory.InventorySummaryDTO(
                     SUM(CASE WHEN t.movementTypeEffectOnStock = 'IN' THEN t.stockMovementQuantity WHEN t.movementTypeEffectOnStock = 'OUT' THEN -t.stockMovementQuantity ELSE 0 END),
                     SUM(CASE WHEN t.seedBatchGrading = true AND t.movementTypeEffectOnStock = 'IN' THEN t.stockMovementQuantity WHEN t.seedBatchGrading = true AND t.movementTypeEffectOnStock = 'OUT' THEN -t.stockMovementQuantity ELSE 0 END),
                     SUM(CASE WHEN t.seedBatchGrading = false AND t.movementTypeEffectOnStock = 'IN' THEN t.stockMovementQuantity WHEN t.seedBatchGrading = false AND t.movementTypeEffectOnStock = 'OUT' THEN -t.stockMovementQuantity ELSE 0 END),
@@ -169,7 +169,7 @@ public interface StockMovementDetailsRepository extends Repository<StockMovement
     InventorySummaryDTO getInventorySummaryBeforeDate(Instant lastDate);
 
     @Query(value = """
-                SELECT new mofe.gov.rcrc_seed_management_api.dto.inventory.InventorySummaryDTO(
+                SELECT new com.example.fieldsync_inventory_backend.dto.inventory.InventorySummaryDTO(
                     SUM(CASE WHEN t.movementTypeEffectOnStock = 'IN' THEN t.stockMovementQuantity WHEN t.movementTypeEffectOnStock = 'OUT' THEN -t.stockMovementQuantity ELSE 0 END),
                     SUM(CASE WHEN t.seedBatchGrading = true AND t.movementTypeEffectOnStock = 'IN' THEN t.stockMovementQuantity WHEN t.seedBatchGrading = true AND t.movementTypeEffectOnStock = 'OUT' THEN -t.stockMovementQuantity ELSE 0 END),
                     SUM(CASE WHEN t.seedBatchGrading = false AND t.movementTypeEffectOnStock = 'IN' THEN t.stockMovementQuantity WHEN t.seedBatchGrading = false AND t.movementTypeEffectOnStock = 'OUT' THEN -t.stockMovementQuantity ELSE 0 END),
@@ -187,7 +187,7 @@ public interface StockMovementDetailsRepository extends Repository<StockMovement
             Integer riceVarietyId, java.time.Instant lastDate);
 
     @Query(value = """
-                SELECT new mofe.gov.rcrc_seed_management_api.dto.inventory.InventoryBatchDTO(
+                SELECT new com.example.fieldsync_inventory_backend.dto.inventory.InventoryBatchDTO(
                     t.seedBatchId, t.riceVarietyId, t.riceVarietyName, t.seedBatchYear,
                     t.seasonId, t.seasonName, t.seasonDescription,
                     t.generationId, t.generationName,
@@ -210,7 +210,7 @@ public interface StockMovementDetailsRepository extends Repository<StockMovement
             Integer riceVarietyId, java.time.Instant lastDate, Pageable pageable);
 
     @Query(value = """
-                SELECT new mofe.gov.rcrc_seed_management_api.dto.stock.summary.StockSummaryResponseDTO(
+                SELECT new com.example.fieldsync_inventory_backend.dto.stock.summary.StockSummaryResponseDTO(
                     COALESCE(SUM(CASE WHEN t.movementTypeEffectOnStock = 'IN' THEN t.stockMovementQuantity WHEN t.movementTypeEffectOnStock = 'OUT' THEN -t.stockMovementQuantity ELSE 0 END), 0),
                     COALESCE(SUM(CASE WHEN t.generationName = 'R1' AND t.movementTypeEffectOnStock = 'IN' THEN t.stockMovementQuantity WHEN t.generationName = 'R1' AND t.movementTypeEffectOnStock = 'OUT' THEN -t.stockMovementQuantity ELSE 0 END), 0),
                     COALESCE(SUM(CASE WHEN t.generationName = 'R2' AND t.movementTypeEffectOnStock = 'IN' THEN t.stockMovementQuantity WHEN t.generationName = 'R2' AND t.movementTypeEffectOnStock = 'OUT' THEN -t.stockMovementQuantity ELSE 0 END), 0),
@@ -246,7 +246,7 @@ public interface StockMovementDetailsRepository extends Repository<StockMovement
             Instant lastDate);
 
     @Query(value = """
-                SELECT new mofe.gov.rcrc_seed_management_api.dto.stock.summary.StockVarietySummaryResponseDTO(
+                SELECT new com.example.fieldsync_inventory_backend.dto.stock.summary.StockVarietySummaryResponseDTO(
                     t.riceVarietyId, t.riceVarietyName,
                     COALESCE(SUM(CASE WHEN t.movementTypeEffectOnStock = 'IN' THEN t.stockMovementQuantity WHEN t.movementTypeEffectOnStock = 'OUT' THEN -t.stockMovementQuantity ELSE 0 END), 0),
                     COALESCE(SUM(CASE WHEN t.generationName = 'R1' AND t.movementTypeEffectOnStock = 'IN' THEN t.stockMovementQuantity WHEN t.generationName = 'R1' AND t.movementTypeEffectOnStock = 'OUT' THEN -t.stockMovementQuantity ELSE 0 END), 0),

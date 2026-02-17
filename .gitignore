@@ -14,11 +14,17 @@ bin/
 .DS_Store
 Thumbs.db
 HELP.md
+*.bak
+*.swp
+*~
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
 
 # Maven (Backend)
-.mvn/
-mvnw
-mvnw.cmd
+.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
 
@@ -36,13 +42,21 @@ mvnw.cmd
 *.keystore
 !debug.keystore
 **/google-services.json
+**/*.apk
+**/*.aar
+**/*.ap_
+**/bundle/
+**/release/
+**/.cxx/
+**/.externalNativeBuild/
 
 # Environment / Security
 .env
 .env.*
 !.env.example
-*.log
+**/*.log
 *.sqlite
 
 # Database
+**/postgres_data/
 **/docker-compose.override.yml
