@@ -28,7 +28,8 @@ It is engineered to support high-reliability data synchronization, secure API co
 ### Prerequisites
 
 - Java JDK 21 or later
-- Maven
+- Maven (Recommend Intellij IDE)
+- Android Studio
 - Docker Compose
 
 ### Steps
