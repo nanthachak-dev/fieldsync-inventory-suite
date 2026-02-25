@@ -1,4 +1,4 @@
-# FieldSync Inventory Backend
+# FieldSync Inventory API
 
 ---
 
